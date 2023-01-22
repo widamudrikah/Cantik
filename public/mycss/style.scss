@@ -1,0 +1,114 @@
+body {
+    font-family: 'Exo 2', sans-serif;
+    // background-image: url(bg2.jpg);
+    background-color: #BBC4D3;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100%;
+}
+nav{
+    background-color:rgba(255, 255, 255, 0.5);
+    .navbar-brand{
+        margin-left: 50px;
+    }
+    .d-flex{
+        .login{
+            color: #696cff;
+            margin-right: 35px;
+            margin-top: 17px;
+        }
+        .regist{
+            color: black;
+            margin-top: 17px;
+            margin-right: 50px;
+        }
+    }
+}
+
+.geser{
+    margin-top: 100px;
+}
+
+
+.welcome{
+    background-color: #9b9df3;
+    margin-bottom: 10px;
+    margin-top:10px;
+    .container{
+        padding: 60px;
+        text-align: center;
+    }
+}
+.welcome{
+    .start{
+        margin-top: -30px;
+    }
+}
+
+.kartu{
+    margin-top: -30px;
+    .text-center{
+        .ikon{
+            margin-right: 20px;
+        }
+    }
+}
+
+.container{
+    .card{
+        background-color:rgba(255, 255, 255, 0.5);
+        width: 90%;
+        max-width: 1070px;
+        margin: 0 auto;   
+        .judul{
+            text-align: center;
+            margin-bottom: 25px;
+            color: #696cff;
+        }
+        .sub{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .row{
+            text-align: center;
+            h5{
+                color: #696cff;
+            }
+            .isi{
+                padding: 20px;
+            }
+        }
+        .bawah{
+            margin-top: 30px;
+        }
+    }
+    
+}
+
+.treatment{
+    margin-top: -30px;
+}
+
+.bg-white{
+    margin-top: 20px;
+    .footer-wrap{
+        padding: 40px;
+    }
+}
+
+.row{
+    .copyright{
+        color: #696cff;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+.bunga{
+    text-align: center;
+    margin-top: -30px;
+}
+
+

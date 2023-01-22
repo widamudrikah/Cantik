@@ -20,4 +20,14 @@ class Transaksi extends Model
         'kode_transaksi',
         'status',
     ];
+
+    public function treatment()
+    {
+        return $this->belongsTo(treatment::class, 'treatment_id', 'id');
+    }
+
+    public function custemor()
+    {
+        return $this->belongsTo(User::class, 'custemor_id', 'id');
+    }
 }

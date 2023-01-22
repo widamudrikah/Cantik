@@ -13,18 +13,18 @@
         <div class="col-md">
           <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img class="card-img card-img-left" src="{{ asset('storage/'.$row->gambar) }}" alt="Card image" />
+              <div class="col-md-5" style="width: 15rem;">
+                <img class="card-img card-img-left" src="{{ asset('storage/'.$row->gambar) }}" alt="Card image"/>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-7">
                 <div class="card-body">
                   <h3 class="card-title"><strong>{{ $row->nama_treatment }}</strong></h3>
                   <strong>Dokter : {{ $row->dokter->name }}</strong>
                   <br>
                   <strong>Harga : {{ $row->harga }}</strong>
-                  <p class="card-text">
+                  <p class="card-text mt-3">
                    <strong>About : </strong>
-                  {{ $row->deskripsi }}
+                  {!! $row->deskripsi !!}
                   </p>
                 </div>
 

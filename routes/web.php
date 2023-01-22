@@ -7,6 +7,7 @@ use App\Http\Controllers\DataCustemorController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\MentorController;
+use App\Http\Controllers\TamuController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\TreatmentController;
 use Illuminate\Support\Facades\Auth;
@@ -23,8 +24,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//Akses Tamu
+Route::controller(TamuController::class)->group(function(){
+    Route::get('/', 'index')->name('tamu');
 });
 
 Auth::routes();
@@ -62,14 +68,24 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
         Route::get('/data-treatment', 'index')->name('data.treatment');
         Route::get('/tambah-treatment', 'tambah')->name('tambah.treatment');
         Route::post('/store-treatment', 'store')->name('store.treatment');
+        Route::get('/edit-treatment/{id}', 'edit')->name('edit.treatment');
+        Route::put('/update-treatment/{id}', 'update')->name('update.treatment');
+        Route::get('/detail-treatment/{id}', 'detail')->name('detail.treatment');
+        Route::get('/destroy-treatment/{id}', 'destroy')->name('destroy.treatment');
     });
 });
 
-
+//Dokter
 
 Route::prefix('dokter')->middleware(['auth','isDokter'])->group(function(){
     Route::controller(DokterController::class)->group(function(){
-        Route::get('/welcome_dokter','index')->name('dashboard.dokter');  
+        Route::get('/welcome_dokter','index')->name('dashboard.dokter'); 
+        Route::get('/job_pending','pending')->name('pending.dokter');
+        Route::get('edit_status/{id}', 'edit')->name('edit.status');
+        Route::put('update_status/{id}', 'update')->name('update.status');
+        Route::get('/job_success','success')->name('sucess.dokter');
+        Route::get('/treatment_saya','treatment')->name('treatment.dokter');
+        Route::get('/custemor_saya','custemor')->name('custemor.dokter');
     });
 });
 
@@ -85,5 +101,6 @@ Route::prefix('custemor')->middleware(['auth', 'isCustemor'])->group(function(){
         Route::get('/checkout-treatment', 'treatment')->name('treatment.custemor');
         Route::post('/checkout-treatment-fix', 'checkout')->name('checkout.custemor');
         Route::get('/berhasil-checkout', 'berhasil')->name('checkout.berhasil');
+        Route::get('/my-treatment', 'myTreatment')->name('my.treatment');
     });
 });

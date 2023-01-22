@@ -15,6 +15,7 @@ class treatment extends Model
         'harga',
         'deskripsi',
         'gambar',
+        'kuota',
 
     ];
 

@@ -1,66 +1,97 @@
-@extends('dashboard.base')
 
-@section('content')
+<!DOCTYPE html>
+<!-- beautify ignore:start -->
+<html lang="en" class="light-style " dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
 
-<div class="card shadow mb-4">
-    <div class="card-header py-3 d-flex justify-content-between align-items-center">
-        <h6 class="m-0 font-weight-bold text-primary">Daftar Treatment</h6>
-        <a href="{{ route('tambah.treatment') }}">
-            <button type="button" class="btn btn-primary btn-sm">
-                + Treatment
-            </button>
-        </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Under Maintenance - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    
+    <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('sneat-1.0.0/assets/img/favicon/favicon.ico')}}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="sneat-1.0.0/assets/vendor/fonts/boxicons.css" />
+    
+    
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/css/core.css')}}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/css/demo.css')}}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
+    
+    <!-- Page CSS -->
+    <!-- Page -->
+<link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/css/pages/page-misc.css')}}">
+    <!-- Helpers -->
+    <script src="{{ asset('sneat-1.0.0/assets/vendor/js/helpers.js')}}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{{ asset('sneat-1.0.0/assets/js/config.js')}}"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <!-- Custom notification for demo -->
+    <!-- beautify ignore:end -->
+</head>
+<body>
+  <!-- Content -->
+
+<!--Under Maintenance -->
+<div class="container-xxl container-p-y">
+  <div class="misc-wrapper">
+    <h2 class="mb-2 mx-2">Berhasil Checkout!</h2>
+    <p class="mb-4 mx-2">
+      Terimakasih sudah mempercayakan perawatan kecantikan anda kepada kami.
+    </p>
+    <a href="{{ route('dashboard.custemor') }}" class="btn btn-primary">Home</a>
+    <div class="mt-4">
+      <img src="{{ asset('sneat-1.0.0/assets/img/illustrations/girl-doing-yoga-light.png')}}" alt="girl-doing-yoga-light" width="500" class="img-fluid" data-app-dark-img="illustrations/girl-doing-yoga-dark.png" data-app-light-img="illustrations/girl-doing-yoga-light.png">
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-        @if(Session::get('Ok'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session::get('Ok') }}
-                </div>
-                @endif
-        </div>
-    </div>
-    <div class="table-responsive text-nowrap">
-        <table class="table table-light" style='color:#696cff'>
-            <thead>
-                <tr>
-                    <th width="15%">Gambar</th>
-                    <th>Treatment</th>
-                    <th>Deskripsi</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody class="table-border-bottom-0">
-                @foreach($treatment as $row)
-                <tr>
-                    <td>
-                        <img src="{{ asset('storage/'.$row->gambar) }}" alt="{{ $row->nama_treatment }}" class="img-fluid">
-                    </td>
-                    <td> <strong> {{ $row->nama_treatment }}</strong>
-                        <br>
-                        Dokter : {{ $row->dokter->name }}
-                        <br>
-                        Kategori : {{ $row->kategori->nama_kategori }}
-                        <br>
-                        Harga : {{ $row->harga }}
-                    </td>
-                    <td>{{ $row->deskripsi }}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href=""><i class="bx bx-edit-alt me-1"></i>Edit</a>
-                                <a class="dropdown-item" href=""><i class="bx bx-trash me-1"></i>Delete</a>
-                                <a class="dropdown-item" href=""><i class="bx bx-eye me-1"></i>Detail</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+  </div>
 </div>
-<!--/ Bootstrap Dark Table -->
+<!-- /Under Maintenance -->
 
-@endsection
+<!-- / Content -->
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  <script src="{{ asset('sneat-1.0.0/assets/vendor/libs/jquery/jquery.js')}}"></script>
+  <script src="{{ asset('sneat-1.0.0/assets/vendor/libs/popper/popper.js')}}"></script>
+  <script src="{{ asset('sneat-1.0.0/assets/vendor/js/bootstrap.js')}}"></script>
+  <script src="{{ asset('sneat-1.0.0/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+  <script src="{{ asset('sneat-1.0.0/assets/vendor/js/menu.js')}}"></script>
+  <!-- endbuild -->
+  <!-- Vendors JS -->
+  <!-- Main JS -->
+  <script src="{{ asset('sneat-1.0.0/assets/js/main.js')}}"></script>
+  <!-- Page JS -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>

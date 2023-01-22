@@ -1,1 +1,0 @@
-<h1>{{ $treatment->nama_treatment }}</h1>

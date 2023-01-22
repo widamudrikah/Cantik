@@ -8,6 +8,7 @@
     <title>Beuty Care Clinic System</title>
     <link rel=”icon” href=”gambar/logo.png”>
 
+
     <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
     <!-- Canonical SEO -->
@@ -15,7 +16,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('sneat-1.0.0/assets/img/favicon/bunga.png') }}" />
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +25,8 @@
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/fonts/boxicons.css') }}" />
 
-
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
@@ -37,6 +39,8 @@
     <link rel="stylesheet" href="{{ asset('sneat-1.0.0/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 
     <!-- Page CSS -->
+    <!-- kalender -->
+
 
     <!-- Helpers -->
     <script src="{{ asset('sneat-1.0.0/assets/vendor/js/helpers.js') }}"></script>
@@ -55,7 +59,7 @@
         }
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
-        
+
     </script>
     <!-- Custom notification for demo -->
     <!-- beautify ignore:end -->
@@ -83,7 +87,7 @@
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <div class="row">
-                                @yield('content')
+                            @yield('content')
                         </div>
                     </div>
                     <!-- / Content -->
@@ -123,6 +127,10 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    @yield('chart')
+
+
 
 </body>
 

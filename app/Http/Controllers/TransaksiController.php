@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransaksiRequest;
 use App\Models\Transaksi;
 use App\Models\treatment;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $treatment = treatment::all();
+        $treatment = treatment::where('kuota', '>', 0)->get(); //tampilkan yang kuotanya lebih dari 0
         return view('custemor.data-treatment', [
             'treatment' => $treatment,
         ]);
@@ -19,7 +20,7 @@ class TransaksiController extends Controller
 
     public function treatment()
     {
-        $treatment = treatment::all();
+        $treatment = treatment::where('kuota', '>', 0)->get(); //tampilkan yang kuotanya lebih dari 0
         return view('custemor.checkout', [
             'treatment' => $treatment,
         ]);
@@ -30,7 +31,7 @@ class TransaksiController extends Controller
         return view('custemor.berhasil');
     }
 
-    public function checkout(Request $request)
+    public function checkout(TransaksiRequest $request)
     {
         // dd($request);
 
@@ -53,9 +54,25 @@ class TransaksiController extends Controller
 
         $transaksi->save();
 
+        //kalo checkout otomatis mengurangi jumlah kuota.
+
+        $kuota          = treatment::findOrFail($request->treatment_id);
+        $kuota->kuota   = $kuota->kuota - 1;
+        $kuota->update();
+
+        
         return redirect()->route('checkout.berhasil');
+    }
 
+    public function myTreatment()
+    {
+        $user_id = Auth::user()->id;
 
+        $transaksi = Transaksi::where('custemor_id', $user_id)
+        ->get();
 
+        return view('custemor.myTreatment', [
+            'transaksi' => $transaksi,
+        ]);
     }
 }
