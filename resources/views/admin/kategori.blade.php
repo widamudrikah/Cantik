@@ -11,6 +11,15 @@
             </button>
         </a>
     </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            @if(Session::get('Ok'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('Ok') }}
+            </div>
+            @endif
+        </div>
+    </div>
     <div class="table-responsive text-nowrap">
         <table class="table table-light" style='color:#696cff'>
             <thead>
@@ -30,14 +39,14 @@
             <img src="{{ asset('storage/'.$row->gambar) }}" alt="{{ $row->gambar }}" class="img-fluid">
           </td>
                     <td>
-                        <i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $row->nama_kategori }}</strong>
+                        <strong>{{ $row->nama_kategori }}</strong>
                     </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route ('kategori.edit', $row->id) }}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                                <a class="dropdown-item" href="{{ route('kategori.destroy', $row->id) }}"><i class="bx bx-trash me-1"></i> Delete</a>
+                                <!-- <a class="dropdown-item" href=""><i class="bx bx-trash me-1"></i> Delete</a> -->
                             </div>
                         </div>
                     </td>

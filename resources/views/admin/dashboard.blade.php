@@ -23,7 +23,8 @@
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $custemor }}</div>
                 </div>
                 <div class="col-auto">
-                    <i class="fas fa-fw fa-chalkboard-teacher fa-2x text-gray-300"></i>
+                    <i class="fa-solid fa-user-group fa-2x text-gray-300"></i>
+                    <!-- <i class="fas fa-fw fa-chalkboard-teacher fa-2x text-gray-300"></i> -->
                 </div>
             </div>
         </div>
@@ -41,7 +42,8 @@
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dokter }}</div>
                 </div>
                 <div class="col-auto">
-                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="fa-solid fa-user-doctor fa-2x text-gray-300"></i>
+                    <!-- <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="fa-solid fa-sack-dollar fa-2x text-gray-300"></i>
                 </div>
             </div>
         </div>
@@ -81,7 +83,7 @@
                     <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pending }}</div>
                 </div>
                 <div class="col-auto">
-                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                <i class="fa-solid fa-sack-dollar fa-2x text-gray-300"></i>
                 </div>
             </div>
         </div>

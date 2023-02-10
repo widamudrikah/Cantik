@@ -4,7 +4,7 @@
 
 <!-- Bordered Table -->
 <div class="card">
-  <h5 class="card-header">Bordered Table</h5>
+  <h5 class="card-header">Pending Job</h5>
   <div class="card-body">
     <div class="table-responsive text-nowrap">
       @if(Session::get('Ok'))

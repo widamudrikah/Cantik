@@ -4,7 +4,7 @@
 
 <!-- Bordered Table -->
 <div class="card">
-  <h5 class="card-header">My Custemor</h5>
+  <h5 class="card-header">My Customer</h5>
   <div class="card-body">
     <div class="table-responsive text-nowrap">
       <table class="table table-bordered">
@@ -18,7 +18,7 @@
         <tbody>
         @foreach($custemor as $row)
           <tr>
-            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $row->nama }}</strong></td>
+            <td><strong>{{ $row->nama }}</strong></td>
             <td>{{ $row->umur }} tahun</td>
             <td>{{ $row->alamat }}</td>
           </tr>

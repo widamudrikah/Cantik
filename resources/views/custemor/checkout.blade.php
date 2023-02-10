@@ -56,7 +56,7 @@
             <div class="col-md-6">
                 <div class="card-body">
                     <div>
-                        <label for="treatment_id" class="form-label">Kategori</label>
+                        <label for="treatment_id" class="form-label">Treatment</label>
                         <select name="treatment_id" id="treatment_id" class="form-select @error('treatment_id') is-invalid @enderror">
                             <option value="">Pilih Treatment</option>
                             @foreach($treatment as $row)
@@ -87,7 +87,7 @@
             </div>
             <div class="col-md-6">
                 <div class="card-body">
-                    <label for="keluhan" class="form-label">Keluhan</label>
+                    <label for="keluhan" class="form-label">Note</label>
                     <textarea name="keluhan" class="form-control @error('keluhan') is-invalid @enderror" id="keluhan" rows="3">{{old('keluhan')}}</textarea>
                     @error('keluhan')
                     <div class="invalid-feedback">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Checkout</button>
                 </div>
             </div>
     </form>

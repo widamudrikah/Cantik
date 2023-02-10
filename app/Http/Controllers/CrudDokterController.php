@@ -54,11 +54,11 @@ class CrudDokterController extends Controller
         return redirect()->route('data-dokter');
     }
 
-    public function destroy($id)
-    {
-        $dokter = User::findOrFail($id);
-        Storage::delete($dokter->gambar);
-        $dokter->delete();
-        return redirect()->route('data-dokter');
-    }
+    // public function destroy($id)
+    // {
+    //     $dokter = User::findOrFail($id);
+    //     Storage::delete($dokter->gambar);
+    //     $dokter->delete();
+    //     return redirect()->route('data-dokter');
+    // }
 }

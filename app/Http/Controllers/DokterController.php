@@ -14,7 +14,7 @@ class DokterController extends Controller
         $user = Auth::user();
         $custemor = Transaksi::whereHas('treatment', 
             function($query) use ($user) {
-                $query->where ('dokter_id', $user->id)->where('status', 1);
+                $query->where ('dokter_id', $user->id);
             })->count();
 
             $transaksi_pending = Transaksi::whereHas('treatment', 
@@ -104,7 +104,7 @@ class DokterController extends Controller
         $user = Auth::user();
         $custemor = Transaksi::whereHas('treatment', 
             function($query) use ($user) {
-                $query->where ('dokter_id', $user->id)->where('status', 1);
+                $query->where ('dokter_id', $user->id);
             })->get();
 
         return view('dokter.my-custemor', [

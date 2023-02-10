@@ -43,6 +43,51 @@ nav .d-flex .regist {
   margin-top: -30px;
 }
 
+.career .row {
+  margin-bottom: 80px;
+}
+.career .row .img-career img {
+  margin-right: 120px;
+}
+@media (max-width: 912px) {
+  .career .row .img-career img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+}
+.career .row .content-career .desc-career {
+  margin-top: 20px;
+}
+.career .row .content-career .desc-career span {
+  font-weight: var(--semibold-fw);
+  font-size: 16px;
+  color: #696cff;
+}
+.career .row .content-career .desc-career .title {
+  margin-top: 8px;
+  font-weight: var(--semibold-fw);
+  font-size: 30px;
+  color: var(--hitam-color);
+}
+.career .row .content-career .desc-career .desc {
+  font-weight: var(--regular-fw);
+  font-size: 16px;
+  color: var(--hitam-desc-color);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.career .row .content-career .desc-career .btn-career {
+  background-color: var(--bg-cocor-secondary);
+  border-color: var(--border-color);
+  border-radius: 50px;
+  color: var(--main-color);
+  width: 150px;
+  font-weight: var(--medium-fw);
+  font-size: 16px;
+}
+
 .kartu {
   margin-top: -30px;
 }

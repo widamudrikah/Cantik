@@ -4,25 +4,29 @@
 
 <!-- Bordered Table -->
 <div class="card">
-  <h5 class="card-header">Succes Job</h5>
+  <h5 class="card-header">Transaksi sukses</h5>
   <div class="card-body">
     <div class="table-responsive text-nowrap">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th>Custemor Name</th>
             <th>Treatment</th>
-            <th>Tanggal Reservasi</th>
-            <th>keluhan</th>
+            <th>Nama Custemor</th>
+            <th>Kode Transaksi</th>
+            <th>Jumlah Bayar</th>
+            <th>Reservasi</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($transaksi as $row)
+            @foreach($transaksi as $row)
           <tr>
-            <td><i class="fab fa-angular fa-lg text-danger me-3"></i><strong>{{ $row->nama }}</strong></td>
-            <td>{{ $row->treatment->nama_treatment }}</td>
+            <td><strong>{{ $row->treatment->nama_treatment }}</strong></td>
+            <td>{{ $row->nama }}</td>
+            <td>{{ $row->kode_transaksi }}</td>
+            <td>
+             Rp.{{ $row->treatment->harga }}
+            </td>
             <td>{{ $row->tanggal_reservasi }}</td>
-            <td>{{ $row->keluhan }}</td>
           </tr>
           @endforeach
         </tbody>
@@ -30,7 +34,6 @@
     </div>
   </div>
 </div>
-
-
+<!--/ Bordered Table -->
 
 @endsection

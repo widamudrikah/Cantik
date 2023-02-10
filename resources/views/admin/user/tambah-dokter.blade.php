@@ -63,7 +63,7 @@
                         </div>
                         @enderror
                     </div>
-                    <img id="frame" src="" class="img-fluid mt-3" />
+                    <img id="frame" src="" class="img-fluid mt-3" width="40%" />
 
                 </div>
             </div>

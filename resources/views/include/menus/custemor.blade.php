@@ -12,19 +12,19 @@
 <!-- Cards -->
 <li class="menu-item">
     <a href="{{ route('transaksi.saya') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-cart" style='color:#696cff'></i>
+    <i class="menu-icon fa-solid fa-list-ul" style='color:#696cff'></i>
         <div data-i18n="Boxicons">Data Treatment</div>
     </a>
 </li>
 <li class="menu-item">
     <a href="{{ route('treatment.custemor') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-cart" style='color:#696cff'></i>
+    <i class="menu-icon fa-regular fa-credit-card" style='color:#696cff'></i>
         <div data-i18n="Boxicons">Checkout Treatment</div>
     </a>
 </li>
 <li class="menu-item">
     <a href="{{ route('my.treatment') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-cart" style='color:#696cff'></i>
+    <i class="menu-icon fa-solid fa-list-check" style='color:#696cff'></i>
         <div data-i18n="Boxicons">My Treatment</div>
     </a>
 </li>

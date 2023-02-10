@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="MB-3">
-                        <label for="gambar" class="form-label">Foto Dokter</label>
+                        <label for="gambar" class="form-label">Foto</label>
                         <input name="gambar" value="{{old('gambar')}}" class="form-control @error('gambar') is-invalid @enderror" type="file" id="formFile" onchange="preview()">
                         @error('gambar')
                         <div class="invalid-feedback">
@@ -33,7 +33,7 @@
                         </div>
                         @enderror
                     </div>
-                    <img id="frame" src="" class="img-fluid mt-3" />
+                    <img id="frame" src="" class="img-fluid mt-3" width="30%"/>
 
                     <div class="row">
                         <div class="col-md-6">

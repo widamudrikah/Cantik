@@ -33,7 +33,7 @@ class KategoriController extends Controller
             'gambar'        => $request->file('gambar')->store('img-gambar'),
         ]);
 
-        return redirect()->route('kategori');
+        return redirect()->route('kategori')->with('Ok', "Kategori $request->nama_kategori berhasil ditambahkan");
     }
 
     public function edit($id)
@@ -52,14 +52,14 @@ class KategoriController extends Controller
 
         $kategori->update();
 
-        return redirect()->route('kategori');
+        return redirect()->route('kategori')->with('Ok', "Kategori $request->nama_kategori berhasil di update");
     }
 
-    public function destroy($id)
-    {
-        $kategori = Kategori::findOrFail($id);
-        Storage::delete($kategori->gambar);
-        $kategori->delete();
-        return redirect()->route('kategori');
-    }
+    // public function destroy($id)
+    // {
+    //     $kategori = Kategori::findOrFail($id);
+    //     Storage::delete($kategori->gambar);
+    //     $kategori->delete();
+    //     return redirect()->route('kategori');
+    // }
 }

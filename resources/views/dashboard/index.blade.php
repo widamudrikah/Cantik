@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Landing Page</title>
+  <title>Miracle Clinic</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand">
-          <img src="mycss/logo.png" alt="logo" width="60%">
+          <img src="mycss/logo.png" alt="logo" width="70%">
         </a>
         <div class="d-flex">
           <a href="{{ route('login') }}">
@@ -93,8 +93,8 @@
   <section>
     <div class="welcome">
       <div class="container">
-        <h3>Selamat Datang Custemor </h3>
-        <p>Miracle Aesthetic Surgery Center menyuguhkan standar perawatan tertinggi dalam prosedur bedah plastik.
+        <h3 style="color: white;">Selamat Datang Custemor </h3>
+        <p style="color: whitesmoke;">Miracle Aesthetic Surgery Center menyuguhkan standar perawatan tertinggi dalam prosedur bedah plastik.
           Memberikan waktu konsultasi dengan dokter bedah kami adalah salah satu bentuk usaha kami agar pasien merasa
           yakin akan prosedur yang akan dilakukan.</p>
       </div>
@@ -123,7 +123,7 @@
     </div>
   </section>
 
-  <section>
+  
     <div class="container">
       <div class="card">
         <div class="card-body">
@@ -207,7 +207,7 @@
   <section>
     <div class="welcome">
       <div class="container start">
-        <h3>Start Your Beauty With Us</h3>
+        <h3 style="color: whitesmoke;">Start Your Beauty With Us</h3>
       </div>
     </div>
     </div>
@@ -254,6 +254,7 @@
     </div>
   </section>
 
+  
 
   <footer id="footer" class="bg-white">
     <div class="footer-wrap">
@@ -267,11 +268,11 @@
                       <strong>CONNECT WITH US</strong>
                     </div>
                     <div class="row mt-4">
-                      <a href="" class="mb-2">Youtube</a>
-                      <a href="" class="mb-2">Linkdin</a>
-                      <a href="" class="mb-2">Twitter</a>
-                      <a href="" class="mb-2">Facebook</a>
-                      <a href="" class="mb-2">Whatsapp</a>
+                      <a href="#" class="mb-2">Youtube</a>
+                      <a href="#" class="mb-2">Linkdin</a>
+                      <a href="#" class="mb-2">Twitter</a>
+                      <a href="#" class="mb-2">Facebook</a>
+                      <a href="#" class="mb-2">Whatsapp</a>
                     </div>
                     
                   </div>	

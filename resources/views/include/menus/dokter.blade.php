@@ -12,7 +12,7 @@
 <!-- Cards -->
 <li class="menu-item">
     <a href="javascript:void(0)" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-user" style='color:#696cff'></i>
+        <i class="menu-icon fa-solid fa-list-ol" style='color:#696cff'></i>
         <div data-i18n="Extended UI">My Job</div>
     </a>
     <ul class="menu-sub">
@@ -36,8 +36,8 @@
 </li>
 <li class="menu-item">
     <a href="{{ route('custemor.dokter') }}" class="menu-link">
-        <i class="menu-icon tf-icons bx bxs-florist" style='color:#696cff'></i>
-        <div data-i18n="Boxicons">MY Custemor</div>
+        <i class="menu-icon fa-solid fa-user-group" style='color:#696cff'></i>
+        <div data-i18n="Boxicons">MY Customer</div>
     </a>
 </li>
 <!-- End Menu A

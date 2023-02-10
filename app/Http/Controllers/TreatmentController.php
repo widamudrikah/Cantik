@@ -45,7 +45,7 @@ class TreatmentController extends Controller
             'kuota'             => $request->kuota,
         ]);
 
-        return redirect()->route('data.treatment')->with('Ok', "$request->nama_treatment berhasil disimpan");
+        return redirect()->route('data.treatment')->with('Ok', "treatment $request->nama_treatment berhasil disimpan");
     }
 
     public function edit($id)
@@ -67,7 +67,7 @@ class TreatmentController extends Controller
         $treatment->deskripsi           = $request->deskripsi;
         $treatment->save();
 
-        return redirect()->route('data.treatment');
+        return redirect()->route('data.treatment')->with('Ok', "treatment $request->nama_treatment berhasil diupdate");
     }
 
     public function detail($id)
@@ -75,35 +75,6 @@ class TreatmentController extends Controller
         $treatment  = treatment::findOrFail($id);
         return view('admin.treatment.detail', compact('treatment'));
     }
-
-    // public function destroy($id)
-    // {
-    //     $treatment = Treatment::find($id);
-    //     $transaksi = $treatment->transaksi;
-    //     if(!is_null($transaksi)) {
-    //         foreach($transaksi as $t) {
-    //             $t->delete();
-    //         }
-    //     }
-
-    //     // return $treatment;
-    //     $treatment->delete();
-    
-    //     return redirect()->route('treatment.index')->with('success', 'Data treatment dan transaksi berhasil dihapus');
-    // }
-
-    // public function destroy($id)
-    // {
-    //     $treatment = Treatment::findOrFail($id);
-    //     $transaksi = $treatment->transaksi;
-    //     foreach ($transaksi as $t) {
-    //         $t->delete();
-    //     }
-    //     return $treatment;
-    //     // $treatment->delete();
-
-    //     return redirect()->route('data.treatment')->with('success', 'Data treatment dan transaksi berhasil dihapus');
-    // }
 
     public function destroy($id)
     {
@@ -115,7 +86,6 @@ class TreatmentController extends Controller
         //return $jumlah_transaksi;
 
         for($x=0; $x < $jumlah_transaksi; $x++){
-            $bayar  = Transaksi::findOrFail($id_transaksi[$x]);
             DB::delete("delete from transaksis where id='$id_transaksi[$x]'");
         }
         
@@ -124,7 +94,7 @@ class TreatmentController extends Controller
         Storage::delete($treatment->gambar);
         $treatment->delete();
 
-        echo "berhasil haus data";
+        return redirect()->route('data.treatment')->with('Ok', "Berhasil hapus data treatment");
 
     }
 }

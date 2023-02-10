@@ -4,9 +4,9 @@ use App\Http\Controllers\CrudDokterController;
 use App\Http\Controllers\CustemorController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataCustemorController;
+use App\Http\Controllers\DataTransaksiController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\MentorController;
 use App\Http\Controllers\TamuController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\TreatmentController;
@@ -37,7 +37,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
+Route::prefix('admin')->middleware(['auth', 'isAdmin', 'auth:sanctum'])->group(function(){
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/welcome_admin', 'index')->name('dashboard');
     });
@@ -48,7 +48,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
         Route::post('/kategori_store', 'store')->name('kategori.store');
         Route::get('/kategori_edit/{id}', 'edit')->name('kategori.edit');
         Route::put('/kategori_update/{id}', 'update')->name('kategori.update');
-        Route::get('/kategori_destroy/{id}', 'destroy')->name('kategori.destroy');
+        // Route::get('/kategori_destroy/{id}', 'destroy')->name('kategori.destroy');
     });
 
     Route::controller(CrudDokterController::class)->group(function(){
@@ -57,7 +57,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
         Route::post('/store-dokter', 'store')->name('store-dokter');
         Route::get('/edit-dokter/{id}', 'edit')->name('edit-dokter');
         Route::put('/update-dokter/{id}', 'update')->name('update-dokter');
-        Route::get('/destroy-dokter/{id}', 'destroy')->name('destroy-dokter');
+        // Route::get('/destroy-dokter/{id}', 'destroy')->name('destroy-dokter');
     });
 
     Route::controller(DataCustemorController::class)->group(function(){
@@ -72,6 +72,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
         Route::put('/update-treatment/{id}', 'update')->name('update.treatment');
         Route::get('/detail-treatment/{id}', 'detail')->name('detail.treatment');
         Route::get('/destroy-treatment/{id}', 'destroy')->name('destroy.treatment');
+    });
+    Route::controller(DataTransaksiController::class)->group(function(){
+        Route::get('/transaksi-pending', 'pending')->name('transaksi.pending.admin');
+        Route::get('/transaksi-sucess', 'success')->name('transaksi.success.admin');
     });
 });
 

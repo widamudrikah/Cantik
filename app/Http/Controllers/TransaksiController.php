@@ -26,14 +26,9 @@ class TransaksiController extends Controller
         ]);
     }
 
-    public function berhasil()
-    {
-        return view('custemor.berhasil');
-    }
-
+    
     public function checkout(TransaksiRequest $request)
     {
-        // dd($request);
 
         $brand = 'BCCS';
         $karakter = '0123456789';
@@ -63,6 +58,12 @@ class TransaksiController extends Controller
         
         return redirect()->route('checkout.berhasil');
     }
+
+    public function berhasil()
+    {
+        return view('custemor.berhasil');
+    }
+
 
     public function myTreatment()
     {

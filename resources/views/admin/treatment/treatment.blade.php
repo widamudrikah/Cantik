@@ -13,11 +13,11 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-        @if(Session::get('Ok'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session::get('Ok') }}
-                </div>
-                @endif
+            @if(Session::get('Ok'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('Ok') }}
+            </div>
+            @endif
         </div>
     </div>
     <div class="table-responsive text-nowrap">
